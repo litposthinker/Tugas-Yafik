@@ -22,7 +22,7 @@ menu using hook_admin_menu_output_alter().
 REQUIREMENTS
 ------------
 
-This module requires the following modules:
+I recommend this editor:
 
- * Views (https://www.drupal.org/project/views)
- * Panels (https://www.drupal.org/project/panels)
+ * Visual Studio Code (https://code.visualstudio.com/)
+
