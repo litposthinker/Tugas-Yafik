@@ -1,0 +1,292 @@
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>
+        Latihan
+    </title>
+</head>
+
+<body>
+    <h1 class="text-center">Form</h1>
+
+    <div class="container-sm mt-5">
+        <form class="border border-dark mx-5">
+            <div class="form-group row mt-2 mx-5">
+                <label for="kodeProduk" class="col-sm-2 col-form-label">Kode Produk</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="kodeProduk" placeholder="MD-001" disabled>
+                </div>
+            </div>
+            <div class="form-group row mx-5">
+                <label for="namaProduk" class="col-sm-2 col-form-label">Nama Produk</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="namaProduk" placeholder="Nama Produk ex. Jus Jambu">
+                </div>
+            </div>
+            <div class="form-group row mx-5">
+                <label for="hargaProduk" class="col-sm-2 col-form-label">Harga Produk</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="hargaProduk">
+                </div>
+            </div>
+            <div class="form-group row mx-5">
+                <label for="satuan" class="col-sm-2 col-form-label">Satuan</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="satuan">
+                        <option disabled selected>Choose...</option>
+                        <option value="1">Gelas</option>
+                        <option value="2">PLastik</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row mx-5">
+                <label for="kategori" class="col-sm-2 col-form-label">Kategori</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="kategori" onchange="kodepro(this.value)">
+                        <option disabled selected>Choose...</option>
+                        <option value="Minuman Dingun">Minuman Dingin</option>
+                        <option value="Makanan Ringan">Makanan Ringan</option>
+                        <option value="Makanan Cepat Saji">Makanan Cepat Saji</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row mx-5 ">
+                <label for="urlGambar" class="col-sm-2 col-form-label">URL Gambar</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="urlGambar">
+                </div>
+            </div>
+            <div class="form-group row mx-5">
+                <label for="stokAwal" class="col-sm-2 col-form-label">Stok Awal</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="stokAwal">
+                </div>
+                <button class="btn btn-info mt-3 ml-3" type="button" onclick="add()" id="button1">Simpan</button>
+                <button class="btn btn-secondary mt-3 ml-3" type="button" onclick="batal()" id="button">Batal</button>
+                <button class="btn btn-info mt-3 ml-3" type="button" onclick="simpanEdit()" id="button2">Simpan</button>
+            </div>
+        </form>
+
+        <table class="table table-bordered mt-5">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Kode Produk</th>
+                    <th scope="col">Nama Produk</th>
+                    <th scope="col">Kategori Produk</th>
+                    <th scope="col">Stok Produk</th>
+                    <th scope="col">Gambar Produk</th>
+                    <th scope="col">Modify</th>
+                </tr>
+            </thead>
+            <tbody id="tampildata">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        var namapro = document.getElementById("namaProduk").value
+        if (namapro == "") {
+            document.getElementById("button1").style.display = "inline"
+            document.getElementById("button2").style.display = "none"
+            document.getElementById("button").style.display = "none"
+        }
+        kodeproduk = []
+        nama = []
+        harga = []
+        satuan = []
+        gambar = []
+        kategori = []
+        stok = []
+
+        tampil = document.getElementById('tampildata')
+
+        function showData() {
+            tampil.innerHTML = ""
+
+            for (i = 0; i < nama.length; i++) {
+                nodata = i + 1
+                tampil.innerHTML += "<tr>" +
+                    "<th>" + nodata + "</th>" +
+                    "<td>" + kodeproduk[i] + "</td>" +
+                    "<td>" + nama[i] + "</td>" +
+                    "<td>" + kategori[i] + "</td>" +
+                    "<td id='stock" + nodata + "'>" + stok[i] + "</td>" +
+                    "<td><img src=" + gambar[i] + " id='image' width='100' height=110'></td>" +
+                    "<td>" +
+                    "<button class='btn btn-warning mr-2' onclick='editdata(" +
+                    i +
+                    ")'>Edit</button>" +
+                    "<button class='btn-danger btn' onclick='hapusdata(" + i +
+                    ")'>Hapus</button>";
+                var stocks = document.getElementById('stock' + nodata + '')
+                if (Number(stocks.innerHTML) < 5) {
+                    stocks.style.backgroundColor = "red"
+                    stocks.style.color = "white"
+                } else {
+                    stocks.style.backgroundColor = ""
+                    stocks.style.color = ""
+                }
+            }
+        }
+
+        function batal() {
+            document.getElementById('kodeProduk').value = ""
+            document.getElementById('namaProduk').value = ""
+            document.getElementById('hargaProduk').value = ""
+            document.getElementById('satuan').value = ""
+            document.getElementById('kategori').value = ""
+            document.getElementById('stokAwal').value = ""
+            document.getElementById('urlGambar').value = ""
+            document.getElementById("button1").style.display = "inline"
+            document.getElementById("button2").style.display = "none"
+            document.getElementById("button").style.display = "none"
+        }
+
+        function add() {
+            var newkode = document.getElementById('kodeProduk').value
+            var newnama = document.getElementById('namaProduk').value
+            var newharga = document.getElementById('hargaProduk').value
+            var newsatuan = document.getElementById('satuan').value
+            var newkategori = document.getElementById('kategori').value
+            var newstok = document.getElementById('stokAwal').value
+            var newgambar = document.getElementById('urlGambar').value
+
+            if (newnama == '') {
+                alert('Anda belum memasukkan data')
+            } else {
+                kodeproduk.push(newkode)
+                nama.push(newnama)
+                harga.push(newharga)
+                satuan.push(newsatuan)
+                gambar.push(newgambar)
+                kategori.push(newkategori)
+                stok.push(newstok)
+                showData()
+                document.getElementById('kodeProduk').value = ""
+                document.getElementById('namaProduk').value = ""
+                document.getElementById('hargaProduk').value = ""
+                document.getElementById('satuan').value = ""
+                document.getElementById('kategori').value = ""
+                document.getElementById('stokAwal').value = ""
+                document.getElementById('urlGambar').value = ""
+            }
+        }
+        var index = []
+
+        function editdata(i) {
+            document.getElementById('kodeProduk').value = kodeproduk[i]
+            document.getElementById('namaProduk').value = nama[i]
+            document.getElementById('urlGambar').value = gambar[i]
+            document.getElementById('satuan').value = satuan[i]
+            document.getElementById('hargaProduk').value = harga[i]
+            document.getElementById('kategori').value = kategori[i]
+            document.getElementById('stokAwal').value = stok[i]
+
+            document.getElementById("button1").style.display = "none"
+            document.getElementById("button2").style.display = "inline"
+            document.getElementById("button").style.display = "inline"
+            index.push(i)
+        }
+
+        function simpanEdit() {
+            var newkode = document.getElementById('kodeProduk').value
+            var newnama = document.getElementById('namaProduk').value
+            var newharga = document.getElementById('hargaProduk').value
+            var newsatuan = document.getElementById('satuan').value
+            var newkategori = document.getElementById('kategori').value
+            var newstok = document.getElementById('stokAwal').value
+            var newgambar = document.getElementById('urlGambar').value
+
+            if (newnama == '') {
+                alert('Anda belum memasukkan data')
+            } else {
+                kodeproduk[index] = newkode
+                nama[index] = newnama
+                harga[index] = newharga
+                satuan[index] = newsatuan
+                gambar[index] = newgambar
+                kategori[index] = newkategori
+                stok[index] = newstok
+                showData()
+                index.pop()
+                document.getElementById('kodeProduk').value = ""
+                document.getElementById('namaProduk').value = ""
+                document.getElementById('hargaProduk').value = ""
+                document.getElementById('satuan').value = ""
+                document.getElementById('kategori').value = ""
+                document.getElementById('stokAwal').value = ""
+                document.getElementById('urlGambar').value = ""
+                document.getElementById("button1").style.display = "inline"
+                document.getElementById("button2").style.display = "none"
+                document.getElementById("button").style.display = "none"
+            }
+        }
+
+        function hapusdata(i) {
+            if (confirm('This action cannot be undone. Are you sure want to delete this data?')) {
+                nama.splice(i, 1);
+                kodeproduk.splice(i, 1);
+                kategori.splice(i, 1);
+                stok.splice(i, 1);
+                gambar.splice(i, 1);
+
+                showData()
+            }
+        }
+
+        function kodepro(value) {
+            var idkode = []
+            var kodekatagori = value.split(" ").filter(function (e) {
+                return e.trim().length > 0;
+            });
+            for (i = 0; i < kodekatagori.length; i++) {
+                if (kodekatagori.length == 1) {
+                    var code = kodekatagori[i].slice(0, 2)
+                } else {
+                    var code = kodekatagori[i].slice(0, 1)
+                }
+                idkode.push(code)
+            }
+            var kodepr = idkode.join("")
+            kodepr = kodepr.toUpperCase()
+            if (idkode.length == 0) {
+                document.getElementById("kodeProduk").value = ''
+            } else {
+                var count = 1;
+                for (i = 0; i < kategori.length; ++i) {
+                    if (kategori[i].toLowerCase() == value.toLowerCase()) {
+                        count++;
+                    }
+                }
+                if (count < 10) {
+                    document.getElementById("kodeProduk").value = kodepr + '-00' + count
+                } else if (count < 100) {
+                    document.getElementById("kodeProduk").value = kodepr + '-0' + count
+                } else {
+                    document.getElementById("kodeProduk").value = kodepr + '-' + count
+                }
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
