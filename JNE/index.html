@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>JNE EXPRESS</title>
+  <link rel="icon" type="image/png" href="https://www.jne.co.id/frontend/favicon.ico">
+
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/assets/owl.carousel.css">
+  <link rel="stylesheet" href="css/assets/owl.theme.default.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-inverse">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#beranda"> <img src="https://www.jne.co.id/frontend/images/material/logo.jpg"
+        alt=""></a>
+
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">PERUSAHAAN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.jne.co.id/id/produk-dan-layanan/jne-express">PRODUK &
+            LAYANAN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">SOLUSI BISNIS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">KARIR</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#widget">HUBUNGI KAMI</a>
+        </li>
+      </ul>
+      <nav class="navbar navbar-light bg-inverse">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search keywords" aria-label="Search">
+          <button class="btn btn-danger my-2 my-sm-0" type="submit"><span class="icon-search"></span></button>
+        </form>
+      </nav>
+    </div>
+  </nav>
+
+  <div id="Next" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#Next" data-slide-to="0" class="active"></li>
+      <li data-target="#Next" data-slide-to="1"></li>
+      <li data-target="#Next" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://www.jne.co.id/contents/slider-387.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.jne.co.id/contents/banner-product-detail-49.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.jne.co.id/contents/banner-7umrVuInwp.png" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#Next" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#Next" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+
+  <div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card-group">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">LACAK PENGIRIMAN</h5>
+                <div class="row">
+                  <textarea name="code" class="required" aria-required="true"></textarea>
+                  <button type="button" class="btn btn-danger">TRACKING</button>
+                </div>
+                <small class="font-italic">Then Click 'TRACKING' Available up to 20 Airwaybill</small>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">TARIF KIRIMAN</h5>
+                <div style="position:relative;">
+                  <label>
+                    <input type="text" name="origin_label" placeholder="Origin" class="autocomplete required"
+                      data-url="https://www.jne.co.id/ajax/origin" autocomplete="off" aria-required="true">
+                    <br>
+                    <small class="font-italic">Origin Shipment</small>
+                  </label>
+                  <label>
+                    <input type="text" name="dest_label" placeholder="Destination" class="autocomplete required"
+                      data-url="https://www.jne.co.id/ajax/destination" autocomplete="off" aria-required="true">
+                    <br>
+                    <small class="font-italic">Destination Shipment</small>
+                  </label>
+                  <label>
+                    <input name="weight" type="text" placeholder="1" style="width:30px; text-align:center"
+                      class="required number" aria-required="true">
+                    <br>
+                    <small class="font-italic">Weight(Kg)</small>
+                  </label>
+                  <button type="button" class="btn btn-danger">CHECK</button>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">TITIK LAYANAN</h5>
+                <div style="position:relative;">
+                  <input name="location" type="text" id="search_location" placeholder="Find location near..."
+                    class="required pac-target-input" autocomplete="off">
+                </div>
+                <small class="font-italic">Enter street address, city or province to find the JNE and
+                  JNE Office locations
+                  near
+                  you.</small>
+              </div>
+              <button type="button" class="btn btn-danger"><span class="icon-search"></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container gallery-wrap site-section">
+
+    <h2 class="mb-5">Gallery</h2>
+    <div class="row mb-4">
+
+      <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+        <a href="#" class="gallery-item"><img src="https://pbs.twimg.com/media/DMQHVLGUEAA3jQi.jpg" alt="Image"
+            class="img-fluid"></a>
+      </div>
+
+
+      <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+        <a href="#" class="gallery-item"><img src="https://bducdn.my.id/img/1200/root/CfvDKIr.jpg" alt="Image"
+            class="img-fluid"></a>
+      </div>
+
+      <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+        <a href="#" class="gallery-item"><img
+            src="https://i2.wp.com/digitalmarketingcampus.com/wp-content/uploads/2019/05/JNE1.png?fit=801%2C528&ssl=1"
+            alt="Image" class="img-fluid"></a>
+      </div>
+
+      <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+        <a href="#" class="gallery-item"><img
+            src="https://cdn2.tstatic.net/tribunnews/foto/bank/images/jne-8-februari-2019.jpg" alt="Image"
+            class="img-fluid"></a>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+        <a href="#" class="gallery-item"><img
+            src="https://lh3.googleusercontent.com/proxy/R5mPcfLLwRRWj40Vll5_zWHa3nlvlyzJpYyWsL8u6YXkPI5yhmGlGcDRSPcZPVDsjZRNb9K0nQzrmt1lkZ8lhkfNaPQKMY_sGfCqz-Oo4Tlc"
+            alt="Image" class="img-fluid"></a>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+        <a href="#" class="gallery-item"><img src="https://marketing.co.id/wp-content/uploads/2018/06/JNE2-1000x549.jpg"
+            alt="Image" class="img-fluid"></a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="site-section pt-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="client">
+            <div class="align-items-center mb-4">
+              <div class="name">
+                <h3>Produk</h3>
+              </div>
+              <div class="img ml-auto mt-3">
+                <img src="https://www.jne.co.id/contents/setting-product-detail-20.jpg" alt="Image" class="img-fluid">
+              </div>
+            </div>
+            <div class="client-text">Dengan pengalaman selama 28 tahun, JNE melayani kebutuhan pelanggan setianya,
+              dengan jasa
+              pengiriman dalam dan luar negeri.
+            </div>
+            <div class="ml-auto">
+              <ul class="list-unstyled links">
+                <li><a href="https://www.jne.co.id/id/produk-dan-layanan/jne-express"><i
+                      class="fa fa-chevron-right"></i> JNE Express</a></li>
+                <li><a href="https://www.jne.co.id/id/produk-dan-layanan/jne-logistic"><i
+                      class="fa fa-chevron-right"></i> JNE Logistic</a></li>
+                <li><a href="https://www.jne.co.id/id/produk-dan-layanan/jne-freight"><i
+                      class="fa fa-chevron-right"></i> JNE Freight</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="client">
+            <div class="align-items-center mb-4">
+              <div class="name">
+                <h3>Publikasi</h3>
+                <span class="date">10/08/2020</span>
+              </div>
+            </div>
+            <div class="client-text">
+              <h5><a
+                  href="https://www.jne.co.id/id/berita/berita-detail/pembukaan-rute-layanan-yes-yakin-esok-sampai-jne-per-10-agustus-2020">Pembukaan
+                  Rute Layanan YES (Yakin Esok Sampai) JNE per 10 Agustus 2020</a>
+              </h5>
+              <p> Kepada Yth.
+                Pelanggan dan Mitra JNE
+                Di
+                Tempat
+                &nbsp;
+                Perihal: Pembukaan Rute Layana</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="client">
+            <div class="align-items-center mb-4">
+              <div class="name">
+                <h3>Event</h3>
+                <span class="date">07/08/2020</span>
+              </div>
+              <div class="img ml-auto mt-3">
+                <img src="https://www.jne.co.id/contents/calendar-2083577771150441.jpg" alt="Image" class="img-fluid">
+              </div>
+            </div>
+            <div class="client-text">
+              <a
+                href="https://www.jne.co.id/id/berita/event-and-promo/calender-event/peduli-covid-19-presdir-jne-serahkan-donasi-250-juta-kepada-gubernur-jawa-tengah">Peduli
+                Covid-19, Presdir JNE Serahkan Donasi 250 Juta kepada Gubernur Jawa Tengah</a>
+            </div>
+          </div>
+        </div>
+
+        <div class=" col-lg-3">
+          <div class="client">
+            <div class="align-items-center mb-4">
+              <div class="name">
+                <h3>Ask Joni</h3>
+              </div>
+              <div class="img ml-auto">
+                <img src="https://www.jne.co.id/frontend/images/content/widget-ask.png" alt="Image" width="200px">
+              </div>
+            </div>
+            <div class="client-text">
+              <div>
+                <form action="https://www.jne.co.id/id/hubungi-kami/ask-joni" method="get">
+                  <label>Subject<br>
+                    <div class="selector_form" style="width: 170px;"><span>Customer
+                        Service</span><select name="category_id">
+                        <option value="1">Customer Service</option>
+                        <option value="2">Solusi Bisnis </option>
+                        <option value="3">JLC</option>
+                        <option value="4">Jesika</option>
+                        <option value="6">JNE Logistics</option>
+                        <option value="7">JNE Freight</option>
+                        <option value="8">Keagenan</option>
+                        <option value="9">TRACE &amp; TRACKING</option>
+                      </select></div>
+                  </label>
+                  <button type="button" class="btn btn-danger">CHECK</button>
+                  <div class="phone">
+                    <div>
+                      <p>(62 21) 5086 8880</p>
+                      <p>customercare@jne.co.id</p>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-section promo-section">
+    <div class="container mb-5">
+      <div class="row">
+        <div class="col-md-7">
+          <h2 class="font-weight-bold">Promo</h2>
+        </div>
+        <br>
+      </div>
+      <div class="container">
+        <div class="owl-carousel owl-theme">
+          <div class="item">
+            <img src="https://www.jne.co.id/contents/thumbnail-promo1940167003101425.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="https://www.jne.co.id/contents/thumbnail-promo2051003056101238.jpg" alt="">
+          </div>
+          <div class="item">
+            <img src="https://www.jne.co.id/contents/thumbnail-promo257066303155402.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-section bg-inverse">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <img src="https://www.jne.co.id/contents/logo-3.jpg" alt="Image" class="img-fluid">
+        </div>
+        <div class="col">
+          <img src="https://www.jne.co.id/contents/logo-2.jpg" alt="Image" class="img-fluid">
+        </div>
+        <div class="col">
+          <img src="https://www.jne.co.id/contents/logo-logo-23.jpg" alt="Image" class="img-fluid">
+        </div>
+        <div class="col">
+          <img src="https://www.jne.co.id/contents/logo-logo-25.jpg" alt="Image" class="img-fluid">
+        </div>
+        <div class="col">
+          <img src="https://www.jne.co.id/contents/logo-logo-26.jpg" alt="Image" class="img-fluid">
+        </div>
+        <div class="col">
+          <img src="https://www.jne.co.id/contents/logo-logo-27.jpg" alt="Image" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="footer site-section">
+    <div class="container">
+      <div class="row">
+        <div class="logo">
+          <a href="index.html">
+            <img src="https://www.jne.co.id/frontend/images/material/logo-footer.png" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="site-logo-footer">
+          </div>
+          <p>Jl. Tomang Raya No. 11
+            Jakarta Barat 11440
+            Indonesia</p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.64627749088!2d106.795633714769!3d-6.178081695527292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f68a65bc3e9f%3A0xc956571ecf150567!2sJl.%20Tomang%20Raya%20No.11%2C%20RT.2%2FRW.1%2C%20Tomang%2C%20Kec.%20Grogol%20petamburan%2C%20Kota%20Jakarta%20Barat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2011440!5e0!3m2!1sid!2sid!4v1598199004173!5m2!1sid!2sid"
+            width=300" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+            tabindex="0"></iframe>
+          <br><br>
+          <a href="#"><span class="m-2 icon-facebook"></span></a>
+          <a href="#"><span class="m-2 icon-twitter"></span></a>
+          <a href="#"><span class="m-2 icon-instagram"></span></a>
+          <a href="#"><span class="m-2 icon-youtube"></span></a>
+        </div>
+        <div class="col">
+          <div class="row">
+            <div class="col">
+              <ul class="list-unstyled links">
+                <li><a href="#">Contact center. (62 21) 5086 8880</a></li>
+                <li><a href="#">customercare@jne.co.id</a></li>
+                <li><a href="#">Office. (62-21) 566 5262</a></li>
+                <li><a href="#">Fax. (62-21) 567 1413</a></li>
+              </ul>
+            </div>
+            <div class="col">
+              <ul class="list-unstyled links">
+                <li><a href="#">Perusahaan</a></li>
+                <li><a href="#">Produk dan Layanan</a></li>
+                <li><a href="#">Solusi Bisnis</a></li>
+                <li><a href="#">Karir</a></li>
+                <li><a href="#">Hubungi Kami</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-section pt-0 copyright">
+    <div class="container">
+      <br>
+      <div class="row mt-5 justify-content-center">
+        <div class="col-md-7 text-center">
+          <p>
+            Copyright &copy;<script>
+              document.write(new Date().getFullYear());
+            </script> All rights reserved | Made with <i class="icon-heart text-danger" aria-hidden="true"></i> by
+            Yafik
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <script src="jquery-3.5.1.min.js"></script>
+  <script src="css/owl.carousel.js"></script>
+
+  <script>
+    //default settings:
+    autoplay: true
+    autoplayHoverPause: false
+
+    var owl = $('.owl-carousel');
+    owl.owlCarousel({
+      items: 4,
+      loop: true,
+      margin: 10,
+      autoplay: true,
+      autoplayTimeout: 1000,
+      autoplayHoverPause: true
+    });
+  </script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
