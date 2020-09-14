@@ -3,12 +3,12 @@ CONTENTS OF THIS FILE
 
  * Introduction
  * Requirements
- * Recommended modules
- * Installation
- * Configuration
- * Troubleshooting
- * FAQ
- * Maintainers
+ * Recommended modules (Soon)
+ * Installation (Soon)
+ * Configuration (Soon)
+ * Troubleshooting (Soon)
+ * FAQ (Soon)
+ * Maintainers (Soon)
  
  INTRODUCTION
 ------------
