@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Gilroy',sans-serif !important;
+}
+
+#keranjang{
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    background-color: white;
+}
+
+.keranjang {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 260px;
+}
+
+#produk{
+    margin-left: 30%;   
+    width: 100%;
+}
+
+.image {
+    width: auto;
+    height: 200px;
+}
+
+.middle{}
+
+.produk {
+    box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+}
+
+.akun{
+    position: absolute;
+    left: 20%;
+    box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+    width: 55%;
+    height: auto;
+}
+
+/* ADMIN */
+.bayangan {
+    box-shadow: 0px 2px 50px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
